@@ -1,0 +1,21 @@
+.bike-box {
+	margin-left: auto;
+	margin-right: auto;
+	height: 450px;
+	border: 1px solid black;
+	margin-top: 30px;
+}
+
+.bike-picture {
+	margin-left: auto;
+	margin-right: auto;
+	height: 450px;
+	border: 1px solid red;
+}
+
+.parts-list {
+	margin-left: auto;
+	margin-right: auto;
+	height: 450px;
+	border: 1px solid blue;
+}
