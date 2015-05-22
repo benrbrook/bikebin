@@ -1,6 +1,6 @@
 <template name="home">
 	{{#if currentUser}}
-		<center><a href="{{pathFor 'addBike'}}" class="btn btn-primary add-bike">Add A Bike</a></center>
+		<center><a href="{{pathFor 'addBike'}}" class="btn btn-primary">Add A Bike</a></center>
 		<center><a class="btn btn-primary edit-bike">Edit Existing Bike</a></center>
 	{{else}}
 		{{> loginMessage}}
