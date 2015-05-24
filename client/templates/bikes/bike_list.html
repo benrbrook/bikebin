@@ -1,0 +1,14 @@
+<template name="bikeList">
+	<div class="row">
+		<div class="col-lg-2 col-md-2 col-sm-2 col-xs-0"></div>
+		<div class="col-lg-8 col-md-8 col-sm-8 col-xs-12">
+			<div class="bike-list">
+				<h1>Your bikes</h1>
+				<a href="{{pathFor 'addBike'}}" class="btn btn-primary btn-bike-add">Add A Bike</a>
+				<p>List of users' bikes goes here</p>
+				{{> bikeItem}}
+			</div>
+		</div>
+		<div class="col-lg-2 col-md-2 col-sm-2 col-xs-0"></div>
+	</div>
+</template>

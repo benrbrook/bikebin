@@ -1,0 +1,22 @@
+<template name="addBike">
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-8 col-md-8 col-sm-8">
+				<h1>Add Bike</h1>
+				<input type="text" class="form-control bike-name" placeholder="Bike name">
+			</div>
+			<div class="col-lg-4 col-md-4 col-sm-4"></div>
+		</div>
+		<div class="row">
+			<div class="col-lg-8 col-md-8 col-sm-8">
+				{{> bikePicture}}
+			</div>
+			<div class="col-lg-4 col-md-4 col-sm-4">
+				{{> partsList}}
+			</div>
+		</div>
+
+		<a class="btn btn-primary" id="btn-bike-create">Create</a>
+		<footer></footer>
+	</div>
+</template>

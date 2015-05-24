@@ -1,12 +1,11 @@
-<template name="addBike">
+<template name="bike">
 	<div class="container">
 		<div class="row">
-			<div class="col-lg-2 col-md-2 col-sm-2 col-xs-1"></div>
-			<div class="col-lg-4 col-md-4 col-sm-4 col-xs-10">
-				<h1>Add Bike</h1>
-				<input type="text" class="form-control" placeholder="Bike name">
+			<div class="col-lg-8 col-md-8 col-sm-8">
+				<h1>Bike name<a href="{{pathFor 'bikeEdit'}}" class="btn btn-primary" id="btn-bike-edit">Edit</a></h1>
+
 			</div>
-			<div class="col-lg-6 col-md-6 col-sm-6 col-xs-1"></div>
+			<div class="col-lg-4 col-md-4 col-sm-4"></div>
 		</div>
 		<div class="row">
 			<div class="col-lg-8 col-md-8 col-sm-8">
@@ -16,17 +15,15 @@
 				{{> partsList}}
 			</div>
 		</div>
-
-		<a class="btn btn-primary">Create</a>
-		<!-- <div class="row">
-			<div class="col-lg-6 col-md-6 col-sm-6 col-xs-10">
+		<div class="row">
+			<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
 				<div class="input-group share-link">
 					<span class="input-group-addon" id="basic-addon1">Share</span>
 					<input type="text" class="form-control" placeholder="Link to share bike would be inserted here" aria-describedby="basic-addon1">
 				</div>
 			</div>
-			<div class="col-lg-4 col-md-4 col-sm-4 col-xs-1"></div>
-		</div> -->
+			<div class="col-lg-4 col-md-4 col-sm-4 col-xs-0"></div>
+		</div>
 	<footer></footer>
 	</div>
 </template>
