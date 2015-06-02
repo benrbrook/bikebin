@@ -8,7 +8,7 @@ Template.bikeEdit.events({
 			name: $(e.target).find('[name=name]').val()
 		}; 
 
-		Meteor.call('bikeEdit', bikeProperties, currentBikeId, function(error, result) {
+		Meteor.call('bikeEdit', currentBikeId, bikeProperties, function(error, result) {
 			if (error)
 				console.log(error.reason);
 
