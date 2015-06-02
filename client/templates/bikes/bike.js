@@ -1,5 +1,5 @@
-Template.layout.events({
-	'click .bike-edit': function() {
-		Router.go('bikeEdit');
+Template.bike.helpers({
+	shareLink: function() {
+		return Router.current().route.path(this);
 	}
 });
