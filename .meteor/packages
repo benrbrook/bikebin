@@ -9,3 +9,4 @@ iron:router
 accounts-password
 ian:accounts-ui-bootstrap-3
 twbs:bootstrap
+manuel:reactivearray

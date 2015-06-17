@@ -5,7 +5,9 @@
 				<h1>Your bikes</h1>
 				<a href="{{pathFor 'bikeAdd'}}" class="btn btn-primary btn-bike-add">Add A Bike</a>
 				<p>List of users' bikes goes here</p>
-				{{> bikeItem}}
+				{{#each bikes}}
+					{{> bikeItem}}
+				{{/each}}
 			</div>
 		</div>
 	<div class="col-lg-2 col-md-2 col-sm-2 col-xs-0"></div>

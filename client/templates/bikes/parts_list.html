@@ -1,5 +1,9 @@
 <template name="partsList">
 	<div class="parts-list">
-		<h1>Editable scrolling parts list goes here</h1>
+		{{#each inputs}}
+			<h5>{{this.name}}</h5>
+			<input class="part-input" type="text" name="{{this.name}}" placeholder="{{this.component}}" />
+		{{/each}}
+		<input value="Add component" class="btn btn-primary" id="btn-part-input-add">
 	</div>
 </template>
