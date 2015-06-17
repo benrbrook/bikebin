@@ -1,24 +1,22 @@
 <template name="bikeAdd">
 	<div class="container">
-		<form>
-			<div class="row">
-				<div class="col-lg-8 col-md-8 col-sm-8">
-					<h1>Add Bike</h1>
-					<input type="text" name="name" class="form-control bike-name" placeholder="Bike name">
-				</div>
-				<div class="col-lg-4 col-md-4 col-sm-4"></div>
+		<div class="row">
+			<div class="col-lg-8 col-md-8 col-sm-8">
+				<h1>Add Bike</h1>
+				<input type="text" name="name" class="form-control bike-name" id="bike-name" placeholder="Bike name">
 			</div>
-			<div class="row">
-				<div class="col-lg-8 col-md-8 col-sm-8">
-					{{> bikePicture}}
-				</div>
-				<div class="col-lg-4 col-md-4 col-sm-4">
-					{{> partsList}}
-				</div>
+			<div class="col-lg-4 col-md-4 col-sm-4"></div>
+		</div>
+		<div class="row">
+			<div class="col-lg-8 col-md-8 col-sm-8">
+				{{> bikePicture}}
 			</div>
+			<div class="col-lg-4 col-md-4 col-sm-4">
+				{{> partsList}}
+			</div>
+		</div>
 
-			<input type="submit" value="Create" class="btn btn-primary" id="btn-bike-create">
-			<footer></footer>
-		</form>
+		<input type="button" value="Create" class="btn btn-primary" id="btn-bike-create">
+		<footer></footer>
 	</div>
 </template>

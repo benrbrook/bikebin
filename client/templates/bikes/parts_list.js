@@ -1,16 +1,23 @@
 var arr = new ReactiveArray([
 	{
 		"name": "Frame",
-		"type": "CAAD10"
+		"type": ""
 	}
 ]);
 
 Template.partsList.events({
-	'click #btn-part-input-add': function() {
+	'click #btn-part-input-add': function(e) {
+		e.preventDefault();
 		arr.push({
 			"name": $('#part-name').val(),
 			"type": $('#part-type').val()
 		});
+		$('#part-name').val('');
+		$('#part-type').val('');
+		console.log(arr.array());
+	},
+	'click #component-remove': function() {
+		return arr.remove(this);
 	}
 });
 

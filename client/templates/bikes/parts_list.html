@@ -1,11 +1,10 @@
 <template name="partsList">
 	<div class="parts-list">
 		{{#each inputs}}
-			<h5>{{this.name}}</h5>
-			<p>{{this.type}}</p>
+			<input class="part-input" id="part-name" type="text" placeholder="Name" value="{{this.name}}" />
+			<input class="part-input" id="part-type" type="text" placeholder="Type" value="{{this.type}}" />
+			<a class="btn" id="component-remove" title="Remove this component">x</a>
 		{{/each}}
-		<input class="part-input" id="part-name" type="text" placeholder="Name" />
-		<input class="part-input" id="part-type" type="text" placeholder="Type" />
 		<input value="Add component" class="btn btn-primary" id="btn-part-input-add">
 	</div>
 </template>

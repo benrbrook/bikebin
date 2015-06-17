@@ -1,9 +1,9 @@
 Template.bikeAdd.events({
-	'submit form': function(e) {
+	'click #btn-bike-create': function(e) {
 		e.preventDefault();
 
 		var bikeProperties = {
-			name: $(e.target).find('[name=name]').val()
+			name: $('#bike-name').val()
 		}
 
 		Meteor.call('bikeInsert', bikeProperties, function(error, result) {
