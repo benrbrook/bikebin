@@ -2,8 +2,10 @@
 	<div class="parts-list">
 		{{#each inputs}}
 			<h5>{{this.name}}</h5>
-			<input class="part-input" type="text" name="{{this.name}}" placeholder="{{this.component}}" />
+			<p>{{this.type}}</p>
 		{{/each}}
+		<input class="part-input" id="part-name" type="text" placeholder="Name" />
+		<input class="part-input" id="part-type" type="text" placeholder="Type" />
 		<input value="Add component" class="btn btn-primary" id="btn-part-input-add">
 	</div>
 </template>

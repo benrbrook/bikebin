@@ -1,13 +1,16 @@
 var arr = new ReactiveArray([
 	{
 		"name": "Frame",
-		"placeholder": "Component"
+		"type": "CAAD10"
 	}
 ]);
 
 Template.partsList.events({
 	'click #btn-part-input-add': function() {
-		console.log("button clicked");
+		arr.push({
+			"name": $('#part-name').val(),
+			"type": $('#part-type').val()
+		});
 	}
 });
 
