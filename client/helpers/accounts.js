@@ -1,6 +1,7 @@
 Accounts.onLogin(function() {
-	if (Meteor.user()) {
-		Router.go('home');
-		pause();
-	}
+	Router.go('home');
 });
+
+Meteor.logout(function() {
+	Router.go('home');
+})
