@@ -1,14 +1,16 @@
 <template name="home">
-	{{#if currentUser}}
-		<div class="col-lg-2 col-md-2 col-sm-2 col-xs-0"></div>
-		<div class="col-lg-8 col-md-8 col-sm-8 col-xs-12">
-			<div class="bike-list">
-				<a href="{{pathFor 'bikesOwned'}}" class="btn btn-primary" id="btn-bikes-owned">Your bikes</a>
-				<a href="{{pathFor 'bikeAdd'}}" class="btn btn-primary" id="btn-bike-add">Add A Bike</a>
+	<div class="row">
+		{{#if currentUser}}
+			<div class="col-lg-2 col-md-2 col-sm-2 col-xs-0"></div>
+			<div class="col-lg-8 col-md-8 col-sm-8 col-xs-12">
+				<div class="bike-list">
+					<a href="{{pathFor 'bikesOwned'}}" class="btn btn-primary" id="btn-bikes-owned">Your bikes</a>
+					<a href="{{pathFor 'bikeAdd'}}" class="btn btn-primary" id="btn-bike-add">Add A Bike</a>
+				</div>
 			</div>
-		</div>
-		<div class="col-lg-2 col-md-2 col-sm-2 col-xs-0"></div>	
-	{{else}}
-		{{> loginMessage}}
-	{{/if}}
+			<div class="col-lg-2 col-md-2 col-sm-2 col-xs-0"></div>	
+		{{else}}
+			{{> loginMessage}}
+		{{/if}}
+	</div>
 </template>

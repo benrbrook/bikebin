@@ -1,5 +1,14 @@
 <template name="bikesOwned">
-	{{#each bikes}}
-		<p>{{name}}</p>	
-	{{/each}}
+	<div class="row">
+		<div class="col-lg-3 col-md-3 col-sm-3 col-xs-0"></div>
+		<div class="col-lg-7 col-md-7 col-sm-7 col-xs-12">
+			<h1>Your bikes</h1>
+			<div class="list-group">
+				{{#each bikes}}
+					<a href="{{pathFor 'bike'}}" class="list-group-item">{{name}}</a>
+				{{/each}}
+			</div>
+		</div>
+		<div class="col-lg-3 col-md-3 col-sm-3 col-xs-0"></div>
+	</div>
 </template>
