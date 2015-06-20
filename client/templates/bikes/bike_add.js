@@ -3,8 +3,14 @@ Template.bikeAdd.events({
 		e.preventDefault();
 
 		var bikeProperties = {
-			name: $('#bike-name').val()
-		}
+			name: $('#name').val(),
+			brand: $('#brand').val(),
+			frame: $('#frame').val(),
+			derailleurs: $('#derailleurs').val(),
+			crank: $('#crank').val(),
+			wheels: $('#wheels').val(),
+			tires: $('#tires').val()
+		};
 
 		Meteor.call('bikeInsert', bikeProperties, function(error, result) {
 			if (error)

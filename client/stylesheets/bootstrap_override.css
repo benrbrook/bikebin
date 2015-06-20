@@ -10,7 +10,13 @@
 	margin-right: auto;
 	height: 450px;
 	border: 1px solid blue;
-	overflow-y: scroll
+}
+
+.part-input input {
+	width: 100%;
+	margin-top: 0px;
+	padding-top: 0px;
+	margin-bottom: 10x;
 }
 
 .input-group.share-link {
@@ -49,11 +55,6 @@ footer {
 	margin-bottom: 15px;
 }
 
-.part-input {
-	width: 100%;
-	margin-top: 0px;
-	padding-top: 0px;
-}
 
 @media (max-width: 767px) {
     .bike-picture {
