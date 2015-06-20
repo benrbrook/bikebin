@@ -1,25 +1,30 @@
 <template name="partsList">
-	<div class="parts-list">
-		<div class="part-input">
-			<label class="control-label" for="brand">Brand</label>
-			<input class="form-control" id="brand" name="brand" type="text" placeholder="Brand" value="" />
-			
-			<label class="control-label" for="frame">Frame</label>
-			<input class="form-control" id="frame" name="frame" type="text" placeholder="Frame" value="" />
-			
-			<label class="control-label" for="derailleurs">Derailleurs</label>
-			<input class="form-control" id="derailleurs" name="derailleurs" type="text" placeholder="Derailleurs" value="" />
-			
-			<label class="control-label" for="crank">Crank</label>	
-			<input class="form-control" id="crank" name="crank" type="text" placeholder="Crank" value="" />
-			
-			<label class="control-label" for="wheels">Wheels</label>
-			<input class="form-control" id="wheels" name="wheels" type="text" placeholder="Wheels" value="" />
-			
-			<label class="control-label" for="tires">Tires</label>
-			<input class="form-control" id="tires" name="tires" type="text" placeholder="Tires" value="" />
-			<!-- <a class="btn" id="component-remove" title="Remove this component">x</a> -->
-		</div>
-		<!-- <input value="Add component" class="btn btn-primary" id="btn-part-input-add"> -->
+	<div id="parts-list">
+		<ul class="list-group">
+			<li class="list-group-item">
+				<h4 class="list-group-item-heading">Brand</h4>
+				<input class="form-control" id="brand" name="brand" type="text" placeholder="Brand" value="" />
+			</li>
+			<li class="list-group-item">
+				<h4 class="list-group-item-heading">Frame</h4>
+				<input class="form-control" id="frame" name="frame" type="text" placeholder="Frame" value="" />
+			</li>
+			<li class="list-group-item">
+				<h4 class="list-group-item-heading">Derailleurs</h4>
+				<input class="form-control" id="derailleurs" name="derailleurs" type="text" placeholder="Derailleurs" value="" />
+			</li>
+			<li class="list-group-item">
+				<h4 class="list-group-item-heading">Crank</h4>
+				<input class="form-control" id="crank" name="crank" type="text" placeholder="Crank" value="" />
+			</li>
+			<li class="list-group-item">
+				<h4 class="list-group-item-heading">Wheels</h4>
+				<input class="form-control" id="wheels" name="wheels" type="text" placeholder="Wheels" value="" />
+			</li>
+			<li class="list-group-item">
+				<h4 class="list-group-item-heading">Tires</h4>
+				<input class="form-control" id="tires" name="tires" type="text" placeholder="Tires" value="" />
+			</li>
+		</ul>
 	</div>
 </template>

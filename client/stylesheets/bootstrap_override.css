@@ -55,9 +55,6 @@ footer {
 	margin-bottom: 15px;
 }
 
-.components {
-	border: 1px solid blue;
-}
 
 @media (max-width: 767px) {
     .bike-picture {
