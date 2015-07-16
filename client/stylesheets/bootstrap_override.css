@@ -54,8 +54,15 @@ footer {
 	margin-bottom: 15px;
 }
 
+#description {
+	margin-top: 15px;
+}
 
 @media (max-width: 767px) {
+    #description {
+		margin-top: 0px;
+	}
+
     .bike-picture {
 		margin-bottom: 15px;
 	}
