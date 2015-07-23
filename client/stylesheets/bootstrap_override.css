@@ -19,7 +19,7 @@
 }
 
 .input-group.share-link {
-	padding-top: 50px;
+	padding-top: 20px;
 	padding-bottom: 100px;
 	/*border: 1px dotted black;*/
 }
@@ -61,6 +61,7 @@ footer {
 @media (max-width: 767px) {
     #description {
 		margin-top: 0px;
+		margin-bottom: 15px;
 	}
 
     .bike-picture {

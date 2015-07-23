@@ -9,7 +9,8 @@ Template.bikeAdd.events({
 			derailleurs: $('#derailleurs').val(),
 			crank: $('#crank').val(),
 			wheels: $('#wheels').val(),
-			tires: $('#tires').val()
+			tires: $('#tires').val(),
+			description: $('#description').val()
 		};
 
 		Meteor.call('bikeInsert', bikeProperties, function(error, result) {
