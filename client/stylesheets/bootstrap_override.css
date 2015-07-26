@@ -58,6 +58,10 @@ footer {
 	margin-top: 15px;
 }
 
+#num-stars {
+	font-size: 15px;
+}
+
 @media (max-width: 767px) {
     #description {
 		margin-top: 0px;
