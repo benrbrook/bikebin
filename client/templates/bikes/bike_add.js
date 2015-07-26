@@ -1,7 +1,9 @@
 Template.bikeAdd.events({
+	// Creates a new bike
 	'click #btn-bike-create': function(e) {
 		e.preventDefault();
 
+		// Pull info from text input fields
 		var bikeProperties = {
 			name: $('#name').val(),
 			brand: $('#brand').val(),
@@ -13,6 +15,8 @@ Template.bikeAdd.events({
 			description: $('#description').val()
 		};
 
+		// This calls bikeInsert on the server, where data 
+		// and login gets validated
 		Meteor.call('bikeInsert', bikeProperties, function(error, result) {
 			if (error)
 				console.log(error.reason);
