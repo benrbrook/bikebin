@@ -31,7 +31,6 @@ Template.bike.helpers({
 Template.bike.events({
 	'click #btn-bike-star': function(e) {
 		e.preventDefault();
-		console.log(this.votes);
     	Meteor.call('star', this._id);
 	}
 })
