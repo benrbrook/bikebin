@@ -1,19 +1,49 @@
 <template name="home">
 	<div class="container">
-		<div class="row">
-			{{#if currentUser}}
-				<div class="col-lg-2 col-md-2 col-sm-2 col-xs-0"></div>
-				<div class="col-lg-8 col-md-8 col-sm-8 col-xs-12">
-					<center><h1>Home</h1></center>
-					<div class="bike-list">
-						<a href="{{pathFor 'bikesOwned'}}" class="btn btn-primary" id="btn-bikes-owned">Your bikes</a>
-						<a href="{{pathFor 'bikeAdd'}}" class="btn btn-primary" id="btn-bike-add">Add A Bike</a>
+		{{#if currentUser}}
+			<div class="row">
+					<div class="col-lg-2 col-md-2 col-sm-2 col-xs-0"></div>
+					<div class="col-lg-8 col-md-8 col-sm-8 col-xs-12">
+						<center><h1>Home</h1></center>
+						<div class="bike-list">
+							<a href="{{pathFor 'bikesOwned'}}" class="btn btn-primary" id="btn-bikes-owned">Your bikes</a>
+							<a href="{{pathFor 'bikeAdd'}}" class="btn btn-primary" id="btn-bike-add">Add A Bike</a>
+						</div>
+					</div>
+					<div class="col-lg-2 col-md-2 col-sm-2 col-xs-0"></div>
+			</div>
+			<div class="row" id="bike-featured">
+				<div class="col-lg-1 col-md-1 col-sm-1 col-xs-0"></div>
+				<div class="col-lg-5 col-md-5 col-sm-5 col-xs-6">
+					<div class="panel panel-default">
+						<div class="panel-heading">Newest Bikes</div>
+						<div class="list-group">
+							{{#each newestBikes}}
+								<a href="{{pathFor 'bike'}}" class="list-group-item">{{name}}</a>
+							{{/each}}
+						</div>
 					</div>
 				</div>
-				<div class="col-lg-2 col-md-2 col-sm-2 col-xs-0"></div>	
-			{{else}}
-				{{> loginMessage}}
-			{{/if}}
-		</div>
+				<div class="col-lg-5 col-md-5 col-sm-5 col-xs-6">
+					<div class="panel panel-default">
+						<div class="panel-heading">Popular Bikes</div>
+						<div class="list-group">
+							{{#each featuredBikes}}
+								<a href="{{pathFor 'bike'}}" class="list-group-item">
+									{{name}}
+									<span class="label label-default" id="star-label">
+										<span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+										{{votes}}
+									</span>
+								</a>
+							{{/each}}
+						</div>
+					</div>
+				</div>
+				<div class="col-lg-1 col-md-1 col-sm-1 col-xs-0"></div>
+			</div>
+		{{else}}
+			{{> loginMessage}}
+		{{/if}}
 	</div>
 </template>

@@ -8,3 +8,12 @@ Template.home.events({
 		Router.go('bikesOwned');
 	}
 });
+
+Template.home.helpers({
+	newestBikes: function() {
+		return Bikes.find({}, {sort: {submitted: -1}, limit: 8});
+	},
+	featuredBikes: function() {
+		return Bikes.find({}, {sort: {votes: -1}, limit: 8})
+	}
+});

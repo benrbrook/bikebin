@@ -62,6 +62,14 @@ footer {
 	font-size: 15px;
 }
 
+#bike-featured {
+	margin-top: 20px;
+}
+
+#star-label {
+	float: right;
+}
+
 @media (max-width: 767px) {
     #description {
 		margin-top: 0px;

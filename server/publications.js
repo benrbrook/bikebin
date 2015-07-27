@@ -10,3 +10,13 @@ Meteor.publish('ownedBikes', function(userId) {
 	// console.log(userId);
 	return Bikes.find({userId: userId});
 });
+
+// Returns newest bikes
+Meteor.publish('newestBikes', function() {
+	return Bikes.find({}, {sort: {submitted: -1}, limit: 8});
+});
+
+// Returns featured (high stat count) bikes
+Meteor.publish('featuredBikes', function() {
+	return Bikes.find({}, {sort: {votes: 1}, limit: 8});
+})
