@@ -3,12 +3,6 @@ Template.bike.helpers({
 	shareLink: function() {
 		return Router.current().route.path(this);
 	},
-	ownPost: function() {
-		return this.userId === Meteor.userId();
-	},
-	loggedIn: function() {
-		return Meteor.userId();
-	},
 	// Updates the class to change the star glyphcon
 	starredGlyph: function() {
 		var userId = Meteor.userId();
@@ -17,15 +11,7 @@ Template.bike.helpers({
 		} else {
 			return '';
 		}
-	}//,
-	// starredDisabled: function() {
-	// 	var userId = Meteor.userId();
-	// 	if (userId && !_.include(this.starUsers, userId)) {
-	// 		return '';
-	// 	} else {
-	// 		return 'disabled';
-	// 	}
-	// }
+	}
 });
 
 Template.bike.events({
@@ -33,4 +19,4 @@ Template.bike.events({
 		e.preventDefault();
     	Meteor.call('star', this._id);
 	}
-})
+});
