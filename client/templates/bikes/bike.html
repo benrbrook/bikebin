@@ -26,6 +26,19 @@
 				{{> components}}
 			</div>
 		</div>
+		<div class="row">
+			<div class="col-lg-8 col-md-8 col-sm-8">
+				{{#each comments}}
+					{{> commentItem}}
+				{{/each}}
+				{{#if currentUser}}
+					{{> commentAdd}}
+				{{else}}
+					<p>Please log in to leave a comment.</p>
+				{{/if}}
+			</div>
+			<div class="col-lg-4 col-md-4 col-sm-4"></div>
+		</div>
 	<footer></footer>
 	</div>
 </template>

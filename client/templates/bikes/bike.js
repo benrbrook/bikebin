@@ -11,6 +11,10 @@ Template.bike.helpers({
 		} else {
 			return '';
 		}
+	},
+	// Returns the comments on the bike
+	comments: function() {
+		return Comments.find({bikeId: this._id});
 	}
 });
 

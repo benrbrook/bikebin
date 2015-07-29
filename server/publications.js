@@ -19,4 +19,9 @@ Meteor.publish('newestBikes', function() {
 // Returns featured (high stat count) bikes
 Meteor.publish('featuredBikes', function() {
 	return Bikes.find({}, {sort: {votes: 1}, limit: 8});
+});
+
+Meteor.publish('comments', function(id) {
+	check(id, String);
+	return Comments.find({bikeId: id});
 })
