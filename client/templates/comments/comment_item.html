@@ -1,8 +1,14 @@
 <template name="commentItem">
 	<div class="panel panel-default">
-		<div class="panel-heading">
-			<span class="author">{{author}}</span>
-			<span class="date">on {{submittedText}}</span>
+		<div class="panel-heading clearfix" id="comment-heading">
+			<h5 class="pull-left">{{author}} {{formattedDate}}</h5>
+			{{#if ownPost}}
+				<div class="btn-group pull-right">
+					<a class="btn btn-danger" id="btn-comment-delete">
+						Delete
+					</a>
+				</div>
+			{{/if}}
 		</div>
 		<div class="panel-body">
 			{{body}}

@@ -70,6 +70,14 @@ footer {
 	float: right;
 }
 
+#btn-comment-edit {
+	margin-top: 2px;
+}
+
+/*#comment-heading {
+	height: 50px;
+}*/
+
 @media (max-width: 767px) {
     #description {
 		margin-top: 0px;

@@ -1,5 +1,5 @@
 Template.commentItem.helpers({
-	submittedText: function() {
+	formattedDate: function() {
 		var currDate = this.submitted.getDate();
 		var currMonth = this.submitted.getMonth();
 		var currYear = this.submitted.getFullYear();
@@ -30,3 +30,20 @@ Template.commentItem.helpers({
 		return formattedTimestamp;
 	}
 });
+
+Template.commentItem.events({
+	'click #btn-comment-delete': function(e) {
+		e.preventDefault();
+
+		if (confirm("Delete this comment?")) {
+			var currentCommentId = this._id;
+
+			// This calls commentDelete on the server, where data 
+			// and login gets validated
+			Meteor.call('commentDelete', currentCommentId, function(error, result) {
+				if (error)
+					console.log(error);
+			});
+		}
+	}
+})
