@@ -1,4 +1,17 @@
 Template.bikeAdd.events({
+	// Initate file upload
+	'change .fileInput': function(event, template) {
+		FS.Utility.eachFile(event, function(file) {
+			var fsFile = new FS.File(file);
+		    fsFile.metadata = {owner: Meteor.userId()};
+		    Images.insert(fsFile, function (err, fileObj) {
+
+		    });
+			Images.insert(file, function(err, fileObj) {
+				// New doc inserted
+			});
+		});
+	},
 	// Creates a new bike
 	'click #btn-bike-create': function(e) {
 		e.preventDefault();

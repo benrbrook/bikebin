@@ -12,3 +12,6 @@ twbs:bootstrap
 manuel:reactivearray
 sacha:spin
 natestrauser:x-editable-bootstrap
+cfs:standard-packages
+cfs:gridfs
+cfs:filesystem
