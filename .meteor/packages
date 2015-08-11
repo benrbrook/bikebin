@@ -15,3 +15,4 @@ natestrauser:x-editable-bootstrap
 cfs:standard-packages
 cfs:gridfs
 cfs:filesystem
+raix:ui-dropped-event

@@ -1,6 +1,6 @@
 Template.bikeAdd.events({
 	// Initate file upload
-	'change .fileInput': function(event, template) {
+	'dropped #dropzone': function(event, template) {
 		FS.Utility.eachFile(event, function(file) {
 			var fsFile = new FS.File(file);
 		    fsFile.metadata = {owner: Meteor.userId()};

@@ -74,9 +74,13 @@ footer {
 	margin-top: 2px;
 }
 
-/*#comment-heading {
-	height: 50px;
-}*/
+#dropzone {
+	text-align: center;
+}
+
+#dropzone span.glyphicon-plus {
+	font-size: 5em;
+}
 
 @media (max-width: 767px) {
     #description {
