@@ -1,3 +1,17 @@
+// Template.bikeAdd.onCreated(function() {
+// 	Session.set('bikeSubmitErrors', {});
+// });
+
+// Template.bikeAdd.helpers({
+// 	errorMessage: function(field) {
+// 		console.log(Session.get('bikeSubmitErrors')[field]);
+// 		return Session.get('bikeSubmitErrors')[field];
+// 	},
+// 	errorClass: function(field) {
+// 		return !!Session.get('bikeSubmitErrors')[field] ? 'has-error' : '';
+// 	}
+// });
+
 Template.bikeAdd.events({
 	// Creates a new bike
 	'click #btn-bike-create': function(e, t) {
@@ -15,6 +29,13 @@ Template.bikeAdd.events({
 			tires: $('#tires').val(),
 			description: $('#description').val()
 		};
+
+		// var errors = validateBike(bikeProperties);
+		// console.log(errors);
+		if (errors.name || errors.brand || errors.frame 
+						|| errors.derailleurs || errors.crank 
+						|| errors.wheels || errors.tires || errors.description)
+			return Session.set('postSubmitErrors', errors);
 
 		var validExtensions = ["jpg", "jpeg", "png"];
 		var validExtension = 0;
