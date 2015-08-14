@@ -15,7 +15,10 @@ Template.bike.helpers({
 	// Returns the comments on the bike
 	comments: function() {
 		return Comments.find({bikeId: this._id});
-	}
+	},
+	files: function() {
+        return Images.find();//S3.collection.find();
+    }
 });
 
 Template.bike.events({

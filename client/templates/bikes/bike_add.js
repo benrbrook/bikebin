@@ -1,19 +1,8 @@
 Template.bikeAdd.events({
-	// Initate file upload
-	'dropped #dropzone': function(event, template) {
-		FS.Utility.eachFile(event, function(file) {
-			var fsFile = new FS.File(file);
-		    fsFile.metadata = {owner: Meteor.userId()};
-		    Images.insert(fsFile, function (err, fileObj) {
-
-		    });
-			Images.insert(file, function(err, fileObj) {
-				// New doc inserted
-			});
-		});
-	},
 	// Creates a new bike
-	'click #btn-bike-create': function(e) {
+	'click #btn-bike-create': function(e, t) {
+		var files = t.$("input.file_bag")[0].files;
+
 		e.preventDefault();
 
 		// Pull info from text input fields
@@ -33,8 +22,34 @@ Template.bikeAdd.events({
 		Meteor.call('bikeInsert', bikeProperties, function(error, result) {
 			if (error)
 				console.log(error.reason);
+			var files = t.$("input.file_bag")[0].files;
+			console.log(files);
+			S3.upload({
+	        	files: files,
+	        	path: "s3"
+	    	}, function(e, image) {
+	    		console.log("S3.upload");
+	            if (e) {
+	            	console.log(e);
+	            } else {
+					console.log("Success");
+					// Update the url
+					Meteor.call('imageUrlUpdate', result._id, image.secure_url, function(error, result) {
+						if (error)
+							console.log(error.reason)
+					});
+		            // Insert image
+		            Images.insert(image);
+	            }
+			});
 
 			Router.go('bike', {_id: result._id});
 		});
+	}
+});
+
+Template.bikeAdd.helpers({
+	files: function() {
+		return Images.find();
 	}
 });
