@@ -1,6 +1,7 @@
 Template.bikeAdd.events({
 	// Creates a new bike
-	'click #btn-bike-create': function(e) {
+	'click #btn-bike-create': function(e, t) {
+		var files = t.$("input.file_bag")[0].files;
 		e.preventDefault();
 
 		// Pull info from text input fields
@@ -15,13 +16,46 @@ Template.bikeAdd.events({
 			description: $('#description').val()
 		};
 
-		// This calls bikeInsert on the server, where data 
-		// and login gets validated
-		Meteor.call('bikeInsert', bikeProperties, function(error, result) {
-			if (error)
-				console.log(error.reason);
+		var validExtensions = ["jpg", "png"];
+		for (i = 0; i < validExtensions.length; ++i) {
+			if (files[0].name.split('.').pop().localeCompare(validExtensions[i]) == 0) {
+				// This calls bikeInsert on the server, where data 
+				// and login gets validated
+				Meteor.call('bikeInsert', bikeProperties, function(error, result) {
+					if (error)
+						console.log(error.reason);
 
-			Router.go('bike', {_id: result._id});
-		});
+					S3.upload({
+			        	files: files,
+			        	path: "s3"
+			    	}, function(e, image) {
+			    		console.log("S3.upload");
+			            if (e) {
+			            	console.log(e);
+			            } else {
+							console.log("Success");
+							// Update the url
+							Meteor.call('imageUrlUpdate', result._id, image.secure_url, function(error, result) {
+								if (error)
+									console.log(error.reason)
+							});
+				            // Insert image
+				            Images.insert(image);
+			            }
+					});
+
+					Router.go('bike', {_id: result._id});
+				});
+			} else {
+				 toastr.error("Bad file type", files[0].name);
+				break;
+			}
+		}
+	}
+});
+
+Template.bikeAdd.helpers({
+	files: function() {
+		return Images.find();
 	}
 });

@@ -1,0 +1,9 @@
+<template name="image">
+	{{#if secureUrl}}
+		<a href="{{secureUrl}}">
+	    	<img src="{{secureUrl}}" class="img-responsive"/>
+	    </a>
+	{{else}}
+        	<h3>Loading image...</h3>
+	{{/if}}
+</template>

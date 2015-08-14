@@ -12,3 +12,10 @@ twbs:bootstrap
 manuel:reactivearray
 sacha:spin
 natestrauser:x-editable-bootstrap
+cfs:standard-packages
+cfs:gridfs
+cfs:filesystem
+raix:ui-dropped-event
+lepozepo:s3
+msavin:mongol
+chrismbeckett:toastr
