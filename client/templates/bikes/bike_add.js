@@ -4,6 +4,7 @@
 
 // Template.bikeAdd.helpers({
 // 	errorMessage: function(field) {
+// 		console.log(field);
 // 		console.log(Session.get('bikeSubmitErrors')[field]);
 // 		return Session.get('bikeSubmitErrors')[field];
 // 	},
@@ -15,7 +16,9 @@
 Template.bikeAdd.events({
 	// Creates a new bike
 	'click #btn-bike-create': function(e, t) {
+		toastr.clear();
 		var files = t.$("input.file_bag")[0].files;
+
 		e.preventDefault();
 
 		// Pull info from text input fields
@@ -30,12 +33,13 @@ Template.bikeAdd.events({
 			description: $('#description').val()
 		};
 
-		// var errors = validateBike(bikeProperties);
-		// console.log(errors);
-		if (errors.name || errors.brand || errors.frame 
-						|| errors.derailleurs || errors.crank 
-						|| errors.wheels || errors.tires || errors.description)
-			return Session.set('postSubmitErrors', errors);
+		var errors = validateBike(bikeProperties, files);
+		if (errors) {
+			for (var key in errors) {
+				toastr.error(errors[key]);
+			}
+			return;
+		}
 
 		var validExtensions = ["jpg", "jpeg", "png"];
 		var validExtension = 0;
