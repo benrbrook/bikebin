@@ -9,7 +9,6 @@ Images.allow({
 // Returns a specific bike from the id
 Meteor.publish('bike', function(id) {
 	check(id, String);
-  console.log(id)
 	return Bikes.find(id);
 });
 
