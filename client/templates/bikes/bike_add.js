@@ -16,40 +16,43 @@ Template.bikeAdd.events({
 			description: $('#description').val()
 		};
 
-		var validExtensions = ["jpg", "png"];
+		var validExtensions = ["jpg", "jpeg", "png"];
+		var validExtension = 0;
 		for (i = 0; i < validExtensions.length; ++i) {
-			if (files[0].name.split('.').pop().localeCompare(validExtensions[i]) == 0) {
-				// This calls bikeInsert on the server, where data 
-				// and login gets validated
-				Meteor.call('bikeInsert', bikeProperties, function(error, result) {
-					if (error)
-						console.log(error.reason);
-
-					S3.upload({
-			        	files: files,
-			        	path: "s3"
-			    	}, function(e, image) {
-			    		console.log("S3.upload");
-			            if (e) {
-			            	console.log(e);
-			            } else {
-							console.log("Success");
-							// Update the url
-							Meteor.call('imageUrlUpdate', result._id, image.secure_url, function(error, result) {
-								if (error)
-									console.log(error.reason)
-							});
-				            // Insert image
-				            Images.insert(image);
-			            }
-					});
-
-					Router.go('bike', {_id: result._id});
-				});
-			} else {
-				 toastr.error("Bad file type", files[0].name);
-				break;
+			if (files[0].name.split('.').pop().localeCompare(validExtensions[i]) === 0) {
+				validExtension = 1;
 			}
+		}
+		if (validExtension) {
+			// This calls bikeInsert on the server, where data 
+			// and login gets validated
+			Meteor.call('bikeInsert', bikeProperties, function(error, result) {
+				if (error)
+					console.log(error.reason);
+
+				S3.upload({
+		        	files: files,
+		        	path: "s3"
+		    	}, function(e, image) {
+		    		console.log("S3.upload");
+		            if (e) {
+		            	console.log(e);
+		            } else {
+						console.log("Success");
+						// Update the url
+						Meteor.call('imageUrlUpdate', result._id, image.secure_url, function(error, result) {
+							if (error)
+								console.log(error.reason)
+						});
+			            // Insert image
+			            Images.insert(image);
+		            }
+				});
+
+				Router.go('bike', {_id: result._id});
+			});
+		} else {
+			 toastr.error("Bad file type", files[0].name);
 		}
 	}
 });
