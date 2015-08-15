@@ -13,6 +13,14 @@
 // 	}
 // });
 
+isEmpty = function(obj) {
+	for (var prop in obj) {
+		if (obj.hasOwnProperty(prop))
+			return false;
+	}
+	return true;
+}
+
 Template.bikeAdd.events({
 	// Creates a new bike
 	'click #btn-bike-create': function(e, t) {
@@ -34,10 +42,11 @@ Template.bikeAdd.events({
 		};
 
 		var errors = validateBike(bikeProperties, files);
-		if (errors) {
+		if (isEmpty(errors)) {
 			for (var key in errors) {
 				toastr.error(errors[key]);
-			}
+			}	
+		} else {
 			return;
 		}
 
