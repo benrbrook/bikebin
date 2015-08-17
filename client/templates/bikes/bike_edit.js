@@ -1,4 +1,8 @@
 Template.bikeEdit.events({
+	'click #btn-bike-cancel': function(e) {
+		var currentBikeId = this._id;
+		Router.go('bike', {_id: currentBikeId});
+	},
 	// Submits an edited bike
 	'click #btn-bike-submit': function(e, t) {
 		var currentBikeId = this._id;
