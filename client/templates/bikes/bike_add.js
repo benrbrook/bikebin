@@ -34,11 +34,10 @@ Template.bikeAdd.events({
 		};
 
 		var errors = validateBike(bikeProperties, files);
-		if (isEmpty(errors)) {
+		if (!isEmpty(errors)) {
 			for (var key in errors) {
 				toastr.error(errors[key]);
 			}	
-		} else {
 			return;
 		}
 
@@ -49,7 +48,7 @@ Template.bikeAdd.events({
 				validExtension = 1;
 			}
 		}
-		
+
 		if (validExtension) {
 			// This calls bikeInsert on the server, where data 
 			// and login gets validated
@@ -57,24 +56,7 @@ Template.bikeAdd.events({
 				if (error)
 					console.log(error.reason);
 
-				S3.upload({
-		        	files: files,
-		        	path: "s3"
-		    	}, function(e, image) {
-		    		console.log("S3.upload");
-		            if (e) {
-		            	console.log(e);
-		            } else {
-						console.log("Success");
-						// Update the url
-						Meteor.call('imageUrlUpdate', result._id, image.secure_url, function(error, result) {
-							if (error)
-								console.log(error.reason)
-						});
-			            // Insert image
-			            Images.insert(image);
-		            }
-				});
+				s3Upload(e, files, result._id);
 
 				Router.go('bike', {_id: result._id});
 			});
