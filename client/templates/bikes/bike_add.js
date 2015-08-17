@@ -13,14 +13,6 @@
 // 	}
 // });
 
-isEmpty = function(obj) {
-	for (var prop in obj) {
-		if (obj.hasOwnProperty(prop))
-			return false;
-	}
-	return true;
-}
-
 Template.bikeAdd.events({
 	// Creates a new bike
 	'click #btn-bike-create': function(e, t) {
@@ -57,6 +49,7 @@ Template.bikeAdd.events({
 				validExtension = 1;
 			}
 		}
+		
 		if (validExtension) {
 			// This calls bikeInsert on the server, where data 
 			// and login gets validated
