@@ -1,18 +1,3 @@
-// Template.bikeAdd.onCreated(function() {
-// 	Session.set('bikeSubmitErrors', {});
-// });
-
-// Template.bikeAdd.helpers({
-// 	errorMessage: function(field) {
-// 		console.log(field);
-// 		console.log(Session.get('bikeSubmitErrors')[field]);
-// 		return Session.get('bikeSubmitErrors')[field];
-// 	},
-// 	errorClass: function(field) {
-// 		return !!Session.get('bikeSubmitErrors')[field] ? 'has-error' : '';
-// 	}
-// });
-
 Template.bikeAdd.events({
 	// Creates a new bike
 	'click #btn-bike-create': function(e, t) {
