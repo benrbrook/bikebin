@@ -5,3 +5,15 @@ Template.registerHelper('ownPost', function() {
 Template.registerHelper('loggedIn', function() {
 	return Meteor.userId();
 });
+
+Template.registerHelper('currentUsername', function() {
+	if (Meteor.loggingIn()) {
+		return "Loading..."
+	} else {
+		return Meteor.user().emails[0].address;
+	}
+});
+
+Template.registerHelper('authenticated', function() {
+    return Meteor.user() || Meteor.loggingIn();
+});
