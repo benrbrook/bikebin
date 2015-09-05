@@ -32,3 +32,8 @@ Meteor.publish('comments', function(id) {
 	check(id, String);
 	return Comments.find({bikeId: id});
 });
+
+Meteor.publish('account', function(id) {
+	check(id, String);
+	return Meteor.users.find({_id: id})
+});

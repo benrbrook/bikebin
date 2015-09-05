@@ -3,5 +3,11 @@ Template.layout.events({
 		e.preventDefault();
 
 		Meteor.logout();
+		Router.go('home');
+	},
+	'click #account': function(e) {
+		e.preventDefault();
+
+		Router.go('accountPage', {userId: Meteor.userId()});
 	}
 });
