@@ -10,7 +10,7 @@ Template.registration.events({
 		// Create a user
 		Accounts.createUser({email: email, password: password}, function(err) {
 			if (err) {
-				toastr.error("Bad creation something-or-other");
+				toastr.error(err);
 			} else {
 				// Account created
 				Router.go('home');

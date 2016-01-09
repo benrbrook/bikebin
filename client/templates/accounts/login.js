@@ -12,7 +12,7 @@ Template.login.events({
 		Meteor.loginWithPassword(email, password, function(err) {
 			if (err) {
 				// Do something
-				toastr.error("Bad login something-or-other");
+				toastr.error(err)
 			} else {
 				// User is logged in
 				Router.go('home');
