@@ -2,3 +2,5 @@
 *.gdoc
 private
 private/*
+settings.json
+mup.json

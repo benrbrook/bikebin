@@ -1,0 +1,8 @@
+<template name="bikeList">
+	<h1>Your bikes</h1>
+	<div class="list-group">
+		{{#each bikes}}
+			<a href="{{pathFor 'bike'}}" class="list-group-item">{{name}}</a>
+		{{/each}}
+	</div>
+</template>
