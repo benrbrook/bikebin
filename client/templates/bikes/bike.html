@@ -9,6 +9,7 @@
   						<span class="glyphicon glyphicon-star{{starredGlyph}}" aria-hidden="true">Star {{votes}}</span>
   					</button>
 				</h1>
+  				<h3><a href="{{pathFor 'accountPage' userId=this.userId}}">{{owner}}</a></h3>
 
 			</div>
 			<div class="col-lg-4 col-md-4 col-sm-4"></div>
@@ -19,7 +20,7 @@
 				<div class="well" id="description">{{description}}</div>
 				<div class="input-group share-link">
 					<span class="input-group-addon" id="basic-addon1">Share</span>
-					<input type="text" class="form-control" placeholder="Link to share bike would be inserted here" aria-describedby="basic-addon1" value="localhost:3000{{shareLink}}">
+					<input type="text" class="form-control" placeholder="Link to share bike would be inserted here" aria-describedby="basic-addon1" value="bikebin.co{{shareLink}}">
 				</div>
 			</div>
 			<div class="col-lg-4 col-md-4 col-sm-4">
