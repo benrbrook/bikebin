@@ -1,4 +1,6 @@
 # bikebin
-Bike sharing website (similar to dressed.so)
+Bike sharing website (similar to dressed.so or wheelwell.com).  Users can upload a photo and specs of their bike to share with other cyclists.  
 
-Live demos at [bikebin.meteor.com](http://bikebin.meteor.com) (updated occassionally).  This is a very slow server, and is not indicative of the performance of the site on dedicated hardware.
+I made this site to try out the Meteor framework and to hone my web development skills, but I hope that someone finds it cool or interesting.  
+
+Live at [bikebin.co](http://bikebin.co)
