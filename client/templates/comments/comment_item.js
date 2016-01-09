@@ -1,7 +1,7 @@
 Template.commentItem.helpers({
 	formattedDate: function() {
 		var currDate = this.submitted.getDate();
-		var currMonth = this.submitted.getMonth();
+		var currMonth = this.submitted.getMonth() + 1;
 		var currYear = this.submitted.getFullYear();
 		var currHour = this.submitted.getHours();
 		var a_p = "";
