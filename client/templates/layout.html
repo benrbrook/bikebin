@@ -1,25 +1,33 @@
 <template name="layout">
-	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-	<div class="navbar navbar-default">
-	    <div class="navbar-header">
-	        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-responsive-collapse">
-	            <span class="icon-bar"></span>
-	            <span class="icon-bar"></span>
-	            <span class="icon-bar"></span>
-	        </button>
-	        <a class="navbar-brand" href="{{pathFor 'home'}}">BikeBin</a>
-	    </div>
-	    <div class="navbar-collapse collapse navbar-responsive-collapse">
-	        <ul class="nav navbar-nav navbar-right">
-	            {{#if authenticated}}
-		        	<li><a href="#" id="account">{{currentUsername}}</a></li>
-		        	<li><a href="#" id="logout">Logout</a></li>
-		        {{else}}
-		            <li><a href="{{pathFor 'login'}}">Login</a></li>
-		            <li><a href="{{pathFor 'registration'}}">Registration</a></li>
-		        {{/if}}
-	        </ul>
-	    </div>
+	<div class="wrapper">
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+		<div class="navbar navbar-default">
+		    <div class="navbar-header">
+		        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-responsive-collapse">
+		            <span class="icon-bar"></span>
+		            <span class="icon-bar"></span>
+		            <span class="icon-bar"></span>
+		        </button>
+		        <a class="navbar-brand" href="{{pathFor 'home'}}">BikeBin</a>
+		    </div>
+		    <div class="navbar-collapse collapse navbar-responsive-collapse">
+		        <ul class="nav navbar-nav navbar-right">
+		            {{#if authenticated}}
+			        	<li><a href="#" id="account">{{currentUsername}}</a></li>
+			        	<li><a href="#" id="logout">Logout</a></li>
+			        {{else}}
+			            <li><a href="{{pathFor 'login'}}">Login</a></li>
+			            <li><a href="{{pathFor 'registration'}}">Registration</a></li>
+			        {{/if}}
+		        </ul>
+		    </div>
+		</div>
+		{{> yield}}
+
 	</div>
-	{{> yield}}
+	<div class="footer">
+		<div class="container">
+        	<p class="text-muted">Copyright &copy; {{currentYear}} Ben Brook</p>
+      </div>
+	</div>
 </template>

@@ -11,3 +11,10 @@ Template.layout.events({
 		Router.go('accountPage', {userId: Meteor.userId()});
 	}
 });
+
+Template.layout.helpers({
+	currentYear: function() {
+		var d = new Date();
+		return d.getFullYear();
+	}
+});
