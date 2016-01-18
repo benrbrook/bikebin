@@ -26,13 +26,14 @@ Template.bikeAdd.events({
 			return;
 		}
 
-		var validExtensions = ["jpg", "jpeg", "png"];
-		var validExtension = 0;
-		for (i = 0; i < validExtensions.length; ++i) {
-			if (files[0].name.split('.').pop().localeCompare(validExtensions[i]) === 0) {
-				validExtension = 1;
-			}
-		}
+		// var validExtensions = ["jpg", "jpeg", "png"];
+		// var validExtension = 0;
+		// for (i = 0; i < validExtensions.length; ++i) {
+		// 	if (files[0].name.split('.').pop().localeCompare(validExtensions[i]) === 0) {
+		// 		validExtension = 1;
+		// 	}
+		// }
+		validExtension = 1
 
 		if (validExtension) {
 			// This calls bikeInsert on the server, where data 
