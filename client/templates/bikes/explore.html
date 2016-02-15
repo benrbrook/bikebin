@@ -1,8 +1,8 @@
 <template name="explore">
 	<div class="container">
 		<div class="row">
-			<div class="col-lg-3 col-md-3 col-sm-3"></div>
-			<div class="col-lg-6 col-md-6 col-sm-6">
+			<div class="col-lg-2 col-md-2 col-sm-2"></div>
+			<div class="col-lg-8 col-md-8 col-sm-8">
 				<h1>Explore bikes</h1>
 				<h4>Newest first</h4>
 				<div id ="explore-bikes" class="list-group">
@@ -25,7 +25,7 @@
 								<div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
 									<img src="{{secureUrl}}" id="explore-bike-thumb" class="img-responsive"/>
 								</div>
-								<div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 bike-list-name"><b>{{name}}</b><br>{{brand}} {{frame}}</div>
+								<div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 bike-list-name"><p id="explore-bike-name">{{name}}</p><br><p id="explore-bike-brand">{{brand}} {{frame}}</p></div>
 								<div id="featured-bike-star" class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
 									<span class="label label-default" id="star-label">
 										{{votes}}
@@ -37,7 +37,7 @@
 					{{/each}}
 				</div>
 			</div>
-			<div class="col-lg-3 col-md-3 col-sm-3"></div>
+			<div class="col-lg-2 col-md-2 col-sm-2"></div>
 		</div>
 	</div>
 </template>

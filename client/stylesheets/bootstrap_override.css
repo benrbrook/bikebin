@@ -45,16 +45,15 @@ html, body {
 }
 
 #explore-bike-name {
-	float: left;
-	display: block;
+	overflow:hidden;
+    text-overflow:ellipsis;
+	font-size: 15px;
 	font-weight: bold;
-	font-size: 20px;
 }
 
 #explore-bike-brand {
-	/*float: left;*/
-	display: block;
-	font-size: 14px;
+	overflow:hidden;
+    text-overflow:ellipsis;
 }
 
 #explore-bike-thumb {
