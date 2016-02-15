@@ -12,6 +12,11 @@ Meteor.publish('bike', function(id) {
 	return Bikes.find(id);
 });
 
+// Returns all bikes
+Meteor.publish('allBikes', function() {
+	return Bikes.find({}, {sort: {submitted: -1}});
+});
+
 // Returns all bikes owned by a certain user
 Meteor.publish('ownedBikes', function(userId) {
 	check(userId, String);
