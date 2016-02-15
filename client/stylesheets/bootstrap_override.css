@@ -47,7 +47,7 @@ html, body {
 #explore-bike-name {
 	overflow:hidden;
     text-overflow:ellipsis;
-	font-size: 15px;
+	font-size: 20px;
 	font-weight: bold;
 }
 
