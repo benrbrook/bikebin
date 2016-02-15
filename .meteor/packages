@@ -23,3 +23,7 @@ email
 accounts-base
 workman:meteor-editable
 okgrow:analytics
+kestanous:herald-web-notifications
+meteorhacks:ssr
+kestanous:herald-email
+kestanous:herald
