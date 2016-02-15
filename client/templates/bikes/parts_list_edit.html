@@ -1,6 +1,11 @@
 <template name="partsListEdit">
-	<div id="parts-listedit">
+	<div id="parts-list-edit">
 		<ul class="list-group">
+			<a class = "list-group-item active">
+		    	<h5 class = "list-group-item-heading">
+		    		Bike specs (requried)
+		    	</h5>
+		 	</a>
 			<li class="list-group-item">
 				<h4 class="list-group-item-heading">Brand</h4>
 				<input class="form-control" id="brand" name="brand" type="text" placeholder="Brand" value="{{brand}}" />
@@ -9,6 +14,13 @@
 				<h4 class="list-group-item-heading">Frame</h4>
 				<input class="form-control" id="frame" name="frame" type="text" placeholder="Frame" value="{{frame}}" />
 			</li>
+		</ul>
+		<ul class="list-group">
+			<a class = "list-group-item active">
+		    	<h5 class = "list-group-item-heading">
+		    		Tell us more (optional)
+		    	</h5>
+		 	</a>
 			<li class="list-group-item">
 				<h4 class="list-group-item-heading">Derailleurs</h4>
 				<input class="form-control" id="derailleurs" name="derailleurs" type="text" placeholder="Derailleurs" value="{{derailleurs}}" />
@@ -22,8 +34,20 @@
 				<input class="form-control" id="wheels" name="wheels" type="text" placeholder="Wheels" value="{{wheels}}" />
 			</li>
 			<li class="list-group-item">
+				<h4 class="list-group-item-heading">Brakes</h4>
+				<input class="form-control" id="brakes" name="brakes" type="text" placeholder="brakes" value="{{brakes}}" />
+			</li>
+			<li class="list-group-item">
 				<h4 class="list-group-item-heading">Tires</h4>
 				<input class="form-control" id="tires" name="tires" type="text" placeholder="Tires" value="{{tires}}" />
+			</li>
+			<li class="list-group-item">
+				<h4 class="list-group-item-heading">Front suspension</h4>
+				<input class="form-control" id="front_suspension" name="front_suspension" type="text" placeholder="Front suspension" value="{{front_suspension}}" />
+			</li>
+			<li class="list-group-item">
+				<h4 class="list-group-item-heading">Rear suspension</h4>
+				<input class="form-control" id="rear_suspension" name="rear_suspension" type="text" placeholder="Rear Suspension" value="{{front_suspension}}" />
 			</li>
 		</ul>
 	</div>

@@ -12,9 +12,12 @@ Template.bikeAdd.events({
 			brand: $('#brand').val(),
 			frame: $('#frame').val(),
 			derailleurs: $('#derailleurs').val(),
+			brakes: $('#brakes').val(),
 			crank: $('#crank').val(),
 			wheels: $('#wheels').val(),
 			tires: $('#tires').val(),
+			front_suspension: $('#front_suspension').val(),
+			rear_suspension: $('#rear_suspension').val(),
 			description: $('#description').val()
 		};
 

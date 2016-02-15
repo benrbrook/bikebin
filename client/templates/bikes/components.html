@@ -1,28 +1,52 @@
 <template name="components">
 	<ul class="list-group">
+		<a class = "list-group-item active">
+	    	<h5 class = "list-group-item-heading">
+	    		Bike
+	    	</h5>
+	 	</a>
 		<li class="list-group-item">
 			<h4 class="list-group-item-heading">Brand</h4>
-			<p class="list-group-item-text">{{brand}}</p>
+			<p class="list-group-item-text">{{placeholder brand}}</p>
 		</li>
 		<li class="list-group-item">
 			<h4 class="list-group-item-heading">Frame</h4>
-			<p class="list-group-item-text">{{frame}}</p>
+			<p class="list-group-item-text">{{placeholder frame}}</p>
 		</li>
+	</ul>
+	<ul class="list-group">
+		<a class = "list-group-item active">
+	    	<h5 class = "list-group-item-heading">
+	    		Other specs
+	    	</h5>
+	 	</a>
 		<li class="list-group-item">
 			<h4 class="list-group-item-heading">Derailleurs</h4>
-			<p class="list-group-item-text">{{derailleurs}}</p>
+			<p class="list-group-item-text">{{placeholder derailleurs}}</p>
 		</li>
 		<li class="list-group-item">
 			<h4 class="list-group-item-heading">Crank</h4>
-			<p class="list-group-item-text">{{crank}}</p>
+			<p class="list-group-item-text">{{placeholder crank}}</p>
+		</li>
+		<li class="list-group-item">
+			<h4 class="list-group-item-heading">Brakes</h4>
+			<p class="list-group-item-text">{{placeholder brakes}}</p>
 		</li>
 		<li class="list-group-item">
 			<h4 class="list-group-item-heading">Wheels</h4>
-			<p class="list-group-item-text">{{wheels}}</p>
+			<p class="list-group-item-text">{{placeholder wheels}}</p>
 		</li>
 		<li class="list-group-item">
 			<h4 class="list-group-item-heading">Tires</h4>
-			<p class="list-group-item-text">{{tires}}</p>
+			<p class="list-group-item-text">{{placeholder tires}}</p>
+		</li>
+		<li class="list-group-item">
+			<h4 class="list-group-item-heading">Front suspension</h4>
+			<p class="list-group-item-text">{{placeholder front_suspension}}</p>
+		</li>
+		<li class="list-group-item">
+			<h4 class="list-group-item-heading">Rear suspension</h4>
+			<p class="list-group-item-text">{{placeholder rear_suspension}}</p>
 		</li>
 	</ul>
 </template>
