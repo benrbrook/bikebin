@@ -19,7 +19,7 @@
 						<div class="panel-heading">Newest Bikes</div>
 						<div class="list-group">
 							{{#each newestBikes}}
-								<a href="{{pathFor 'bike'}}" class="list-group-item">{{name}}</a>
+								<a href="{{pathFor 'bike'}}" class="list-group-item bike-list-name">{{name}}</a>
 							{{/each}}
 						</div>
 					</div>
@@ -27,14 +27,18 @@
 				<div class="col-lg-5 col-md-5 col-sm-5 col-xs-6">
 					<div class="panel panel-default">
 						<div class="panel-heading">Popular Bikes</div>
-						<div class="list-group">
+						<div id="featured-bikes" class="list-group">
 							{{#each featuredBikes}}
 								<a href="{{pathFor 'bike'}}" class="list-group-item">
-									{{name}}
-									<span class="label label-default" id="star-label">
-										<span class="glyphicon glyphicon-star" aria-hidden="true"></span>
-										{{votes}}
-									</span>
+									<div class="row">
+										<div class="col-lg-9 col-md-9 col-sm-9 col-xs-9 bike-list-name">{{name}}</div>
+										<div id="featured-bike-star" class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+											<span class="label label-default" id="star-label">
+												{{votes}}
+												<span class="glyphicon glyphicon-star"></span>
+											</span>
+										</div>
+									</div>
 								</a>
 							{{/each}}
 						</div>

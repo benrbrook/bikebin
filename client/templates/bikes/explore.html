@@ -5,9 +5,35 @@
 			<div class="col-lg-6 col-md-6 col-sm-6">
 				<h1>Explore bikes</h1>
 				<h4>Newest first</h4>
-				<div class="list-group">
+				<div id ="explore-bikes" class="list-group">
 					{{#each bikes}}
-						<a href="{{pathFor 'bike'}}" class="list-group-item">{{name}}</a>
+						<!-- <a href="{{pathFor 'bike'}}" class="list-group-item">
+							<div id="explore-container">
+								<span class="label label-default" id="star-label">
+									<span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+									{{votes}}
+								</span>
+								<img src="{{secureUrl}}" id="explore-bike-thumb" class="img-responsive" width="100px"/>
+								<div id="explore-bike-name" class="">{{name}}</div>
+								<div id="explore-bike-brand">{{brand}} {{frame}}</div>
+								<div class="clear"></div> 
+							</div>
+						</a> -->
+
+						<a href="{{pathFor 'bike'}}" class="list-group-item">
+							<div class="row">
+								<div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+									<img src="{{secureUrl}}" id="explore-bike-thumb" class="img-responsive"/>
+								</div>
+								<div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 bike-list-name"><b>{{name}}</b><br>{{brand}} {{frame}}</div>
+								<div id="featured-bike-star" class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
+									<span class="label label-default" id="star-label">
+										{{votes}}
+										<span class="glyphicon glyphicon-star"></span>
+									</span>
+								</div>
+							</div>
+						</a>
 					{{/each}}
 				</div>
 			</div>

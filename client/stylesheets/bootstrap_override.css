@@ -14,6 +14,7 @@ html, body {
     height: auto !important;
     height: 100%;
     margin: 0 auto -70px; /* the bottom margin is the negative value of the footer's height */
+    padding-bottom: 90px;
 }
 .footer, .push {
 	background-color: #D5DADB;
@@ -37,6 +38,33 @@ html, body {
 
 .navbar-default .navbar-toggle .icon-bar {
 	background-color: white;
+}
+
+#explore-bikes {
+	/*overflow: auto;*/
+}
+
+#explore-bike-name {
+	float: left;
+	display: block;
+	font-weight: bold;
+	font-size: 20px;
+}
+
+#explore-bike-brand {
+	/*float: left;*/
+	display: block;
+	font-size: 14px;
+}
+
+#explore-bike-thumb {
+	float: left;
+    clear:left;
+    margin-right: 10px;
+}
+
+.clear {
+	clear: both;
 }
 
 .bike-picture {
@@ -107,8 +135,17 @@ footer {
 	margin-top: 20px;
 }
 
-#star-label {
-	float: right;
+.label {
+	dispaly: inline-block;
+	margin-right: 10px;
+}
+
+.bike-list-name {
+	overflow:hidden;
+    /*white-space:nowrap;*/
+    text-overflow:ellipsis;
+    /*width:80%;*/
+    /*display:block;*/
 }
 
 #btn-comment-edit {
@@ -132,6 +169,7 @@ footer {
     .bike-picture {
 		margin-bottom: 15px;
 	}
+
 
 	#btn-bike-create {
 		width: 100%;
