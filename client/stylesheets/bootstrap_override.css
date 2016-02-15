@@ -123,6 +123,11 @@ footer {
 	margin-bottom: 15px;
 }
 
+#bike-name {
+	overflow:hidden;
+    text-overflow:ellipsis;
+}
+
 #description {
 	margin-top: 15px;
 }
