@@ -164,6 +164,8 @@ footer {
 	font-size: 5em;
 }
 
+
+/*Mobile stuff*/
 @media (max-width: 767px) {
     #description {
 		margin-top: 0px;
@@ -185,6 +187,20 @@ footer {
 
 	#btn-bike-submit {
 		width: 100%;
+	}
+
+	#home-page-buttons {
+		padding-top: 15px;
+	}
+
+	#home-page-buttons > a {
+		padding-top: 10px;
+		padding-bottom: 10px;
+		font-size: 20px;
+		margin: 0 auto;
+		display: block;
+		width: 80%;
+		margin-bottom: 10px;
 	}
 
 }
