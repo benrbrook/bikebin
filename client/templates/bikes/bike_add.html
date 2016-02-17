@@ -1,22 +1,80 @@
 <template name="bikeAdd">
 	<div class="container">
 		<div class="row">
-			<div class="col-lg-8 col-md-8 col-sm-8">
-				<h1>Add Bike</h1>
+			<div class="col-lg-10 col-md-10 col-sm-10">
+				<h1>Add a bike</h1>
 				<input type="text" name="name" class="form-control bike-name" id="name" placeholder="Bike name">
 			</div>
-			<div class="col-lg-4 col-md-4 col-sm-4"></div>
+			<div class="col-lg-2 col-md-2 col-sm-2"></div>
 		</div>
 		<div class="row">
-			<div class="col-lg-8 col-md-8 col-sm-8">
+			<div class="col-lg-10 col-md-10 col-sm-10">
 				<input accept="image/*" type="file" class="file_bag">
 				<textarea class="form-control" rows="5" id="description" placeholder="Description"></textarea>
+			</div>
+			<div class="col-lg-2 col-md-2 col-sm-2"></div>
+		</div>
+		<div class="row">
+			<div class="col-lg-10 col-md-10 col-sm-10">
+				<div id="parts-list-edit">
+					<ul class="list-group">
+						<a class = "list-group-item active">
+					    	<h5 class = "list-group-item-heading">
+					    		Bike specs (requried)
+					    	</h5>
+					 	</a>
+						<li class="list-group-item">
+							<h4 class="list-group-item-heading">Brand</h4>
+							<input class="form-control" id="brand" name="brand" type="text" placeholder="Brand" value="" />
+						</li>
+						<li class="list-group-item">
+							<h4 class="list-group-item-heading">Frame</h4>
+							<input class="form-control" id="frame" name="frame" type="text" placeholder="Frame" value="" />
+						</li>
+					</ul>
+					<ul class="list-group">
+						<a class = "list-group-item active">
+					    	<h5 class = "list-group-item-heading">
+					    		Tell us more (optional)
+					    	</h5>
+					 	</a>
+						<li class="list-group-item">
+							<h4 class="list-group-item-heading">Derailleurs</h4>
+							<input class="form-control" id="derailleurs" name="derailleurs" type="text" placeholder="Derailleurs" value="" />
+						</li>
+						<li class="list-group-item">
+							<h4 class="list-group-item-heading">Crank</h4>
+							<input class="form-control" id="crank" name="crank" type="text" placeholder="Crank" value="" />
+						</li>
+						<li class="list-group-item">
+							<h4 class="list-group-item-heading">Brakes</h4>
+							<input class="form-control" id="brakes" name="brakes" type="text" placeholder="Brakes" value="" />
+						</li>
+						<li class="list-group-item">
+							<h4 class="list-group-item-heading">Wheels</h4>
+							<input class="form-control" id="wheels" name="wheels" type="text" placeholder="Wheels" value="" />
+						</li>
+						<li class="list-group-item">
+							<h4 class="list-group-item-heading">Tires</h4>
+							<input class="form-control" id="tires" name="tires" type="text" placeholder="Tires" value="" />
+						</li>
+						<li class="list-group-item">
+							<h4 class="list-group-item-heading">Front suspension</h4>
+							<input class="form-control" id="front_suspension" name="front_suspension" type="text" placeholder="Front suspension" value="" />
+						</li>
+						<li class="list-group-item">
+							<h4 class="list-group-item-heading">Rear suspension</h4>
+							<input class="form-control" id="rear_suspension" name="rear_suspension" type="text" placeholder="Rear Suspension" value="" />
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-lg-10 col-md-10 col-sm-10">
 				<input type="button" value="Create" class="btn btn-primary" id="btn-bike-create">
 			</div>
-			<div class="col-lg-4 col-md-4 col-sm-4">
-				{{> partsList}}
-			</div>
-			<div class="col-lg-4 col-md-4 col-sm-4"></div>
+			<div class="col-lg-2 col-md-2 col-sm-2"></div>
 		</div>
 		<footer></footer>
 	</div>

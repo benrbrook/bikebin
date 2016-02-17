@@ -2,16 +2,14 @@
 	<div class="container">
 		<div class="row">
 			<div class="col-lg-8 col-md-8 col-sm-8">
-				<h1>
-					<p id="bike-name">{{name}}</p>
+				<h1 id="bike-name-main">{{name}}</h1>
+				<div id="bike-controls">
 					{{#if ownPost}}<a href="{{pathFor 'bikeEdit'}}" class="btn btn-primary" id="btn-bike-edit">Edit</a>{{/if}}
 					<button type="button" class="btn btn-default btn-lg {{#unless currentUser}}disabled{{/unless}}" id="btn-bike-star">
   						<span class="glyphicon glyphicon-star{{starredGlyph}}" aria-hidden="true">Star {{votes}}</span>
   					</button>
-				</h1>
-  				<!-- <h3><a href="{{pathFor 'accountPage' userId=this.userId}}">{{owner}}</a></h3> -->
-  				<h3>{{owner}}</h3>
-
+  					<h3>{{owner}}</h3>
+  				</div>
 			</div>
 			<div class="col-lg-4 col-md-4 col-sm-4"></div>
 		</div>
