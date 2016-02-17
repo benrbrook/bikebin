@@ -205,13 +205,13 @@ footer {
     text-overflow:ellipsis;
 }
 
-#btn-bike-star {
-	margin-top: 10px;
-}
 
 /*Mobile stuff*/
 @media (max-width: 767px) {
 
+	#btn-bike-star {
+		margin-top: 10px;
+	}
     .bike-picture {
 		margin-bottom: 15px;
 	}
