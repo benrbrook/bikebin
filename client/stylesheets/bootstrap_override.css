@@ -32,13 +32,28 @@ html, body {
     color:  white;
 }
 
+.navbar .nav > li > a:hover {
+    background-color: white;
+	color: #337AB7;
+}
+
 .navbar .navbar-header > a {
 	color: white;
+}
+
+.navbar .navbar-header > a:hover {
+	background-color: white;
+	color: #337AB7;
+}
+
+.navbar-default .navbar-toggle:hover {
+	background-color: #337AB7;
 }
 
 .navbar-default .navbar-toggle .icon-bar {
 	background-color: white;
 }
+
 
 #explore-bikes {
 	/*overflow: auto;*/
@@ -189,6 +204,7 @@ footer {
     /*white-space:nowrap;*/
     text-overflow:ellipsis;
 }
+
 /*Mobile stuff*/
 @media (max-width: 767px) {
 
